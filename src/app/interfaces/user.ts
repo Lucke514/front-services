@@ -3,3 +3,8 @@ export interface User {
   clave : string;
 }
 
+export interface UserLoginResponse {
+  id_usuario : number;
+  jwv : string;
+}
+
