@@ -4,7 +4,6 @@ export interface User {
 }
 
 export interface UserLoginResponse {
-  id_usuario : number;
-  jwv : string;
+  jwt : string;
 }
 

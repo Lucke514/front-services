@@ -12,22 +12,26 @@ export class AuthService {
 
   constructor() { }
 
-  checkTokenValidity(): void {
-    const token = localStorage.getItem('token');
+  checkTokenValidity(token: any): void {
     if (token) {
-      this.http.get(`${this.url}/auth`).subscribe(
+      this.http.get(`${this.url}/auth`, {
+        headers: {
+          'Authorization': `Bearer ${token}`
+        }
+      }).subscribe(
         (response) => {
-          console.log('Token is valid:', response);
+          console.log('Token Válido!', response);
         },
         (error) => {
-          console.error('Token is invalid:', error);
+          console.error('Token Inválido!', error);
           localStorage.removeItem('token');
         }
       );
     }
   }
 
+
   login(user : User) {
-    return this.http.post<UserLoginResponse>(`${this.url}/auth`, user);
+    return this.http.post<any>(`${this.url}/auth`, user);
   }
 }
