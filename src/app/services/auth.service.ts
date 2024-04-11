@@ -12,6 +12,7 @@ export class AuthService {
 
   constructor() { }
 
+  // TODO : Pasar la funcion de validar el token para que devuelva un booleano y poder hacer la validación!!
   checkTokenValidity(token: any): void {
     if (token) {
       this.http.get(`${this.url}/auth`, {

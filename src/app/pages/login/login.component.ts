@@ -1,6 +1,6 @@
 import { Component, Inject } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { AuthService } from '../../services/auth.service';
+import { AuthService } from '@services/auth.service';
 import { DOCUMENT } from '@angular/common';
 import { User } from '../../interfaces/user';
 
