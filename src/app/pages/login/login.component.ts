@@ -1,6 +1,6 @@
 import { Component, Inject } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { AuthService } from '@services/auth.service';
+import { AuthService } from '@services/auth/auth.service';
 import { DOCUMENT } from '@angular/common';
 import { User } from '@interfaces/user';
 
@@ -39,7 +39,7 @@ export class LoginComponent {
         // Verificar si el token es válido mediante el servicio de autenticación
         this.authService.checkTokenValidity(token).then((response) => {
           console.log(response);
-          if (!response.isAuth) {
+          if (response.isAuth) {
             // Si el token es válido, se redirige al usuario a la página de inicio
             this.document.defaultView?.location.replace('/home');
           } else {
