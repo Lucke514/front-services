@@ -3,11 +3,12 @@ import { AuthService } from '@services/auth/auth.service';
 import { DOCUMENT } from '@angular/common';
 import { ServiceService } from '@services/service/service.service';
 import { Service } from "@interfaces/services";
+import { ItemComponent } from '../../components/item/item.component';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [],
+  imports: [ItemComponent],
   templateUrl: './home.component.html',
   styles: ``
 })
@@ -38,7 +39,7 @@ export class HomeComponent {
         // Verificar si el token es válido mediante el servicio de autenticación
         this.authService.checkTokenValidity(token).then((response) => {
           if (response.isAuth) {
-            alert('Bienvenido : ' + response.user)
+            console.log('Token válido');
           } else {
             // Si el token no es válido, se elimina del localStorage
             localStorage.removeItem('token');

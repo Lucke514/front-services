@@ -1,5 +1,7 @@
 <p>home works!</p>
 
-@for (service of services; track $index) {
- <h1> {{ service.nombre_tipo_servicio }} </h1>
-}
+<div class="flex justify-center gap-x-10">
+  @for (service of services; track $index) {
+    <app-item [item]="service"></app-item>
+  }
+</div>

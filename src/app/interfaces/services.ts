@@ -1,10 +1,11 @@
 export interface Service {
-  id_servicio: number;
-  id_tipo_servicio: number;
-  id_estado_servicio: number;
-  descripcion: string;
-  imagen: string;
-  creado_en: string;
-  precio: number;
-  nombre_tipo_servicio: string;
+  descripcion_estado: string
+  descripcion_servicio : string
+  fecha_creacion_servicio : Date
+  id_estado :  number
+  id_servicio :  number
+  id_tipo :  number
+  imagen_servicio :  string
+  nombre_tipo_servicio :  string
+  precio_servicio :  number
 }
